@@ -1,0 +1,159 @@
+Time : 23:19:37
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO usuarios( 
+                                    us_name     , 
+                                    us_last_name, 
+                                    us_dni      , 
+                                    us_password , 
+                                    us_status   , 
+                                    us_type      
+                             ) values 
+                             (      :us_name     , 
+                                    :us_last_name, 
+                                    :us_dni      , 
+                                    :us_password , 
+                                    :us_status   , 
+                                    :us_type      
+                             )
+
+Time : 23:18:18
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO usuarios( 
+                                    us_name     , 
+                                    us_last_name, 
+                                    us_dni      , 
+                                    us_password , 
+                                    us_status   , 
+                                    us_type      
+                             ) values 
+                             (      :us_name     , 
+                                    :us_last_name, 
+                                    :us_dni      , 
+                                    :us_password , 
+                                    :us_status   , 
+                                    :us_type      
+                             )
+
+Time : 23:17:44
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'us_last_name 
+                                    us_dni 
+                      ' at line 3
+Raw SQL : INSERT INTO usuarios( 
+                                    us_name 
+                                    us_last_name 
+                                    us_dni 
+                                    us_password 
+                                    us_status 
+                                    us_type 
+                             ) values 
+                             (      :us_name 
+                                    :us_last_name 
+                                    :us_dni 
+                                    :us_password 
+                                    :us_status 
+                                    :us_type 
+                             )
+
+Time : 22:17:29
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'pro_stock_temp > 0' at line 1
+Raw SQL : SELECT * FROM productos WHERE 1 = 1AND  pro_stock_temp > 0
+
+Time : 22:17:14
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'pro_stock_temp > 0' at line 1
+Raw SQL : SELECT * FROM productos WHERE 1 = 1AND  pro_stock_temp > 0
+
+Time : 16:41:02
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:38:28
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:38:12
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:37:48
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:37:37
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:36:57
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:36:33
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:17:18
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:16:02
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:15:04
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:14:57
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 16:14:31
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 15:59:22
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pro_code' cannot be null
+Raw SQL : INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp)  
+                values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)
+
+Time : 15:58:56
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pro_code' cannot be null
+Raw SQL : INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp)  
+                values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)
+
+Time : 15:53:55
+SQLSTATE[HY000] [1049] Unknown database 'store_mini'
+
+Time : 05:24:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT LAST_INSERT_ID()' at line 4
+Raw SQL : UPDATE  productos  SET  pro_code = :pro_code, pro_name = :pro_name, pro_description = :pro_description,  
+                pro_precio_unidad = :pro_precio_unidad, pro_precio_mayor = :pro_precio_mayor, pro_cant_pro_precio_mayor = :pro_cant_pro_precio_mayor, 
+                pro_stock_general = :pro_stock_general, pro_stock_venta = :pro_stock_venta, 
+                pro_stock_almacen = :pro_stock_almacen, pro_stock_temp = :pro_stock_temp where pro_id = LAST_INSERT_ID(:pro_id) ; SELECT LAST_INSERT_ID()
+
+Time : 05:17:30
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'pro_code' cannot be null
+Raw SQL : INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp)  
+                values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)
+
+Time : 01:51:05
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+                pro_stock_almacen = ?, pro_stock_temp = ? where pro_id = ?' at line 3
+Raw SQL : UPDATE  productos  SET  pro_code = :pro_code, pro_name = :pro_name, pro_description = :pro_description,  
+                pro_precio_unidad = :pro_precio_unidad, pro_precio_mayor = :pro_precio_mayor, pro_cant_pro_precio_mayor = :pro_cant_pro_precio_mayor, 
+                pro_stock_general = :pro_stock_general, pro_stock_venta, 
+                pro_stock_almacen = :pro_stock_almacen, pro_stock_temp = :pro_stock_temp where pro_id = :pro_id
+
+Time : 01:25:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?)' at line 2
+Raw SQL : INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp)  
+                values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_:pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)
+
+Time : 01:24:04
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?)' at line 2
+Raw SQL : INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp)  
+                values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_:pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)
+
+Time : 01:22:24
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?)' at line 2
+Raw SQL : INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp)  
+                values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_:pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)

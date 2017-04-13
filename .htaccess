@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+##home inicio
+	RedirectMatch  ^/$ /home/ 
+	##Proteger modulos and folders
+	RewriteRule ^views/(.*)$ /home/$1 [R=301,NC,L]
+	RewriteRule ^controllers/(.*)$ /home/$1 [R=301,NC,L]
+	RewriteRule ^includes/(.*)$ /home/$1 [R=301,NC,L]
+	RewriteRule ^models/(.*)$ /home/$1 [R=301,NC,L]
+
+	RewriteRule ^json/([^/\.]+)/?$ m-json.php?module=$1 [L,QSA]
+
+	##RewriteRule    ^/?$     views/root/login.php [NC,L]
+	# RewriteRule    ^oops/?$    error.php   [NC,L]
+	# RewriteRule    ^login/?$     views/root/login.php [NC,L]
+	# RewriteRule    ^logout/?$   views/root/logout.php [NC,L]
+	# RewriteRule    ^dashboard/?$    dashboard.php    [NC,L]
+
+    ##Modules
+
+	RewriteRule ^([^/\.]+)/$ FileMain.php?module=$1 [L,QSA]
+	RewriteRule ^([^/\.]+)/([^/\.]+)/$ FileMain.php?module=$1&page=$2 [L,QSA]
+	RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/$ FileMain.php?module=$1&page=$2&id=$3 [L,QSA]
+	
+	
+
+
+
+</IfModule>

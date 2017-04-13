@@ -1,0 +1,27 @@
+{
+    "Table_one":{
+        "column_name_one": "email",
+        "column_name_dos": "onlynumber",
+        "column_name_three": "onlyletter|require|length_max,30|length_min,10|only,ALUMNO,ROOT,ADMIN,DOCENTE||decimal"        
+    },
+    "productos":{
+        "pro_id" : "onlynumber",
+        "pro_name" : "require",
+        "pro_description" : "require",
+        "pro_precio_unidad" : "require|decimal",
+        "pro_precio_mayor" : "require|decimal",
+        "pro_cant_pro_precio_mayor" : "require|onlynumber",
+        "pro_stock_general" : "require|onlynumber",
+        "pro_stock_venta" : "require|onlynumber"
+    },
+
+    "usuarios":{
+        "us_id" : "onlynumber",
+        "us_name" : "require|onlyletter",
+        "us_last_name" : "require|onlyletter",
+        "us_dni" : "require|onlynumber|length_max,9|length_min,9",
+        "us_type" : "require|only,ROOT,ADMIN,CLIENTE"
+
+    }
+
+}

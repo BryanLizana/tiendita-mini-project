@@ -1,0 +1,28 @@
+Time : 15:39:40
+SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+
+Time : 15:39:37
+SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+
+Time : 15:39:31
+SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+
+Time : 15:39:11
+SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+
+Time : 15:39:09
+SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+
+Time : 00:32:26
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '74650330' for key 'us_dni'
+Raw SQL : INSERT INTO usuarios(us_name,us_last_name,us_dni,us_password,us_status,us_type) values(:us_name,:us_last_name, 
+                                    :us_dni      , 
+                                    :us_password , 
+                                    :us_status   , 
+                                    :us_type      
+                             )

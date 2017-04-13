@@ -1,0 +1,16 @@
+VISA
+4111 1111 1111 1111
+09/20
+123
+:: https://www.culqi.com/docs/#/desarrollo/tarjetas
+
+
+Paypal
+jose_cliente@senati.com
+pass: 123456789
+
+Paypal vendedor:
+juan_empresa@senati.com
+123456789
+
+https://www.sandbox.paypal.com/signin  -- se puede entrar con la cuenta vendedor para ver los movimientos

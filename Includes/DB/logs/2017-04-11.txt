@@ -1,0 +1,7 @@
+Time : 04:49:20
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
+
+Time : 04:45:56
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`store_mini`.`producto_imgs`, CONSTRAINT `FK_PRO_FILE` FOREIGN KEY (`pro_id`) REFERENCES `productos` (`pro_id`))
+Raw SQL : INSERT INTO producto_imgs(pro_id,pro_img_path) values(:pro_id,:pro_img_path)
