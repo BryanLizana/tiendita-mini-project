@@ -18,7 +18,6 @@ if ( $re_val === 1 ) {
     $UserController->us_password = $_POST['us_password'];         
     $UserController->us_type = $_POST['us_type'];        
 
-
     if (is_numeric( $_POST['us_id'])) {
        $id =  $UserController->update_usuario();
        
@@ -28,6 +27,8 @@ if ( $re_val === 1 ) {
          
         
     }
+
+    header('location'.MODULE_PATH_WEB.'list_user/');
 }else {
         //flash
     $flash = new FLash();

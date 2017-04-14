@@ -1,0 +1,72 @@
+path para conf DB :  \Includes\DB\settings.ini.php
+
+
+
+Solo el admin o encargado de administrar el site podrá usar el btn 'Login' 
+user: 	123456789
+pass : 	123456789
+
+admin/
+Se podrá listar los productos de la tienda como también crear , eliminar o editar dichos registros.
+Algunos Campos de producto:
+El stock general es el total de items sobre el producto
+El stock Venta es el total de los productos que se venderá (si pasa la cantidad de stock general se actualiza a la cantidad del estock eneral)
+El stock almacen es el resto de stock general y venta
+El stock tempopral (pro_stock_temp) actúa cuando se agregan productos al carro de compras.
+	 Una vez se finalice la compra el stock venta se iguala al stock temp 
+	( si el usuario se retira el stock temp (por un archivo que se ejecuta de manera manual[esto en produción se debe ejecutar de manera auto]) regresa a la cantidad del stock venta )
+La cantidad precio mayor: es la cantidad de productosque el sistema tomará para aplicar el precio por mayor. El cambio se ejecuta cuando se aumenta la cantidad
+
+home/
+Se puede buscar item por el nombre si no los encuentra lista todos
+
+
+Para agregar items al carro de copras pulsar el btn 'Add To' que lo tiene cada item, si se pulsa dos veces se añade una unidad a ese item 
+Estos cambios y el precio total deben de verse al instante en la página
+Para comprar ir a 'Items in your cart'  (se ven dos btn, ambos son iguales)
+Ya en la página de compra configurar las cantidades a coprar
+(Observar que si pones todo el stock del items otra persona no podrá ver dicho item al entrar a la página)
+(Si se supera la cantidad para que se considere precio mayor se apreciará al instante el el totaly precio del item)
+Si deseeas comprar más items puedes hacerlo sin perder los que ya agregaste o si deseas poder limpiar tu carro de compras con el btn 'Limpiar list de items'
+
+
+Compra con paypal
+Por el momento solo he probado en modo desarrollo por falta de tarjetas (según paypal el modo sandbox es similar al original)
+para ello el usuario cliente que he creado es:
+Paypal cliente
+jose_cliente@senati.com
+pass: 123456789
+
+y
+
+Paypal vendedor:
+juan_empresa@senati.com
+123456789
+
+https://www.sandbox.paypal.com/signin  -- se puede entrar con la cuenta vendedor para ver los movimientos
+
+Pulsar el btn paypal y seguir los pasos: (igresar cuenta cliente) y por último 'return to marchart'(una vez se pulse se actualizará el sotck
+	- error que ahora detecto pero ya es tarde para agregar[si el usuario sale de aquí no se actualiza el stock para ello sería un campo en la tabla para 'pro_cofirmed_sale' que con un proceso automático recorra la lista  de productos para ver que productos siguen en espera y actualizar el stock venta = con el stock temp]) 
+
+Para el pago con trajeta he usado Culqi, pero como no poseo una empresa solo te dan el modo prueba que lo simulas con tarjetas de prueba
+VISA
+4111 1111 1111 1111
+09/20
+123
+:: https://www.culqi.com/docs/#/desarrollo/tarjetas
+
+una vez finalizado te manda a la página de gracias. No he considerado errores debido a que no sé como depurar dichos errores de esas plataformas , en el caso de culqi solo valido si recibo el token
+
+(En caso ocurra un error al llamar un archivo, probar con un host virtual, ya que yo lo trabajo así, pero he 'parchado' todos los errores posibles para que no ocurra ese problema)
+
+
+By Lizana De La O , Bryan
+
+
+
+
+
+
+
+
+ 

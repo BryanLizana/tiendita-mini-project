@@ -1,3 +1,7 @@
+<?php 
+use Controllers\ProductoController;
+$ProductoController =  new ProductoController();
+ ?>
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
@@ -32,10 +36,20 @@
               <tbody >
 							<?php $total_compra = 0; ?>
 								<?php  if(isset($_SESSION['list_car']) && is_array($_SESSION['list_car']) ):  ?>
+							
 										  <?php foreach ($_SESSION['list_car'] as $pro_id => $producto_detail): ?>
 											<?php //echo '<pre>'; var_dump( $_SESSION['list_car'] ); echo '</pre>'; die; /***VAR_DUMP_DIE***/  ?>
+													<?php //img
+														$ProductoController->pro_id = $pro_id ;
+														$img = $ProductoController->list_imgs();
+														?>
 												 <tr>
-													<td> <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
+													<?php  if(!empty($img[0]) ):  ?>
+														<td> <img width="60" src="<?php echo PATH_RESOURCE ?>uploaded/<?php echo $img[0]['pro_img_path'] ?>" alt=""/></td>														
+													<?php else: ?>
+														<td> <img width="60" src="<?php echo PATH_RESOURCE ?>uploaded/no-image.jpg" alt=""/></td>
+														
+													<?php  endif;  ?>
 													<td><?php echo $producto_detail['name'] ?></td>
 													<td>
 														<div class="input-append">

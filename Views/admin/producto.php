@@ -53,7 +53,10 @@
               <div class="row">
               <?php  if(isset($error_active) &&  $error_active == 1):  ?>
               <!--Error-->
-                <?php $flash->display("error") ?>
+             
+                  <div class="alert alert-warning">
+                    <strong>Warning!</strong>    <?php $flash->display("error") ?>
+                  </div>
               <?php  endif;  ?>
 
                  <fieldset>
@@ -124,13 +127,8 @@
                  <div class="form-group">
                               Images list;
                     <input name="file_1" type="file"  > 
-                    <input name="file_2" type="file"  > 
-                    <input name="file_3" type="file"  > 
-                    </div>
-         
+                    </div>     
 
-           
-                    
                          <div class="col-lg-10 col-lg-offset-2">
                            <a href="<?php echo MODULE_PATH_WEB ?>list_producto/" class="btn btn-default" type="reset">Cancel</a>
                             <button class="btn btn-primary" type="submit">Submit</button>

@@ -54,9 +54,8 @@ class ClassUsers
     public function us_save()
     {
         $db =  new DB();
-        $this->pro_code= "CODE";
-        
-        if ( empty($this->pro_id) ) {
+        $this->us_code= "CODE";
+        if ( empty($this->us_id) ) {
 
         $sql = "INSERT INTO usuarios(us_name,us_last_name,us_dni,us_password,us_status,us_type) values(:us_name,:us_last_name,
                                     :us_dni      ,
@@ -79,7 +78,7 @@ class ClassUsers
         $re = $db->lastInsertId();
 
         }else {
-        $sql = "UPDATE  productos  SET            
+        $sql = "UPDATE  usuarios  SET            
                         us_name = :us_name ,          
                         us_last_name = :us_last_name ,
                         us_dni = :us_dni ,            

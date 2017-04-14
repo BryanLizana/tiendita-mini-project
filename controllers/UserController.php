@@ -46,6 +46,7 @@ class UserController extends ClassUsers
 
     public function update_usuario()
     {
+         $this->us_status = 1;
         return self::us_save();
     }
 

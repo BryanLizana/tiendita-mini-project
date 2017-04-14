@@ -5,7 +5,7 @@ VISA
 :: https://www.culqi.com/docs/#/desarrollo/tarjetas
 
 
-Paypal
+Paypal cliente
 jose_cliente@senati.com
 pass: 123456789
 

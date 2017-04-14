@@ -9,8 +9,8 @@
         "pro_name" : "require",
         "pro_description" : "require",
         "pro_precio_unidad" : "require|decimal",
-        "pro_precio_mayor" : "require|decimal",
-        "pro_cant_pro_precio_mayor" : "require|onlynumber",
+        "pro_precio_mayor" : "decimal",
+        "pro_cant_pro_precio_mayor" : "onlynumber",
         "pro_stock_general" : "require|onlynumber",
         "pro_stock_venta" : "require|onlynumber"
     },
@@ -19,7 +19,7 @@
         "us_id" : "onlynumber",
         "us_name" : "require|onlyletter",
         "us_last_name" : "require|onlyletter",
-        "us_dni" : "require|onlynumber|length_max,9|length_min,9",
+        "us_dni" : "require|onlynumber|length_max,9|length_min,7",
         "us_type" : "require|only,ROOT,ADMIN,CLIENTE"
 
     }

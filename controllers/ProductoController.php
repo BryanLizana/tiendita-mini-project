@@ -24,21 +24,45 @@ class ProductoController extends ClassProductos
         return $tags;
     }
 
+    public function validar_pro_precio_mayor()
+    {
+
+      if ( $this->pro_stock_almacen < $this->pro_stock_venta ) { // siel usuario pone más de lo que hay
+         $this->pro_stock_venta =  $this->pro_stock_almacen;
+        }
+
+        // stock almacén;
+       $re_almacen = $this->pro_stock_general - $this->pro_stock_venta;
+       $this->pro_stock_almacen  = "$re_almacen";     
+       $this->pro_stock_temp = $this->pro_stock_venta;
+
+       if (empty( $this->pro_precio_mayor)) { // si no se pone el precio mayor
+          $this->pro_precio_mayor =  $this->pro_precio_unidad;          
+       }
+
+       if (empty( $this->pro_cant_pro_precio_mayor)) {
+          $this->pro_cant_pro_precio_mayor =  $this->pro_stock_venta;          
+       }
+
+      
+
+    }
     public function crear_producto()
     {
       
        $this->pro_id = null;
-       $this->pro_stock_almacen = $this->pro_stock_general - $this->pro_stock_venta;       
-       $this->pro_stock_temp = $this->pro_stock_venta;
+       //validar_pro_precio_mayor()
+        self::validar_pro_precio_mayor();
 
        return self::pro_save();
     }
 
     public function update_producto()
     {
-       $re_almacen = $this->pro_stock_general - $this->pro_stock_venta;
-       $this->pro_stock_almacen  = "$re_almacen";       
-       $this->pro_stock_temp = $this->pro_stock_venta;
+
+       //validar_pro_precio_mayor()
+        self::validar_pro_precio_mayor();
+
         return self::pro_save();
     }
 
@@ -106,4 +130,9 @@ class ProductoController extends ClassProductos
     {
         return self::pro_update_stock_venta();
     }    
+
+    public function update_items_pro()
+    {
+       return self::pro_update_items_pro();
+    }
 }

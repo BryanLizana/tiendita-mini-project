@@ -2,7 +2,7 @@
     use Controllers\UserController;
     use Includes\Flash\Flash;
    valid_permisos(); 
-   
+   $flash = new Flash;
    ?>
   <?php 
   $status_pro = (isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) ? 'Editar' : 'Crear';
@@ -42,10 +42,11 @@
           <div class="col-md-12">
             <div class="card">
               <div class="row">
-               <?php  if(!empty($_SESSION['flash_messages']['error'])):  ?>
-              <!--Error-->
-
-                <?php $flash = new Flash() ; $flash->display("error") ?>
+              <?php  if($flash->hasErrors()):  ?>
+              <!--Error-->             
+                  <div class="alert alert-warning">
+                    <strong>Warning!</strong>    <?php $flash->display("error") ?>
+                  </div>
               <?php  endif;  ?>
                  <fieldset>
                         <legend> <?php echo   $status_pro ?>  Usuario</legend>

@@ -28,8 +28,7 @@ $data_list = $UserController->list_usuarios();
                 <table class="table table-hover table-bordered" id="sampleTable">
                   <thead>
                     <tr>
-                    <th></th>
-                    <th></th>                    
+                    <th></th>                 
                       <th>ID</th>      
                       <th>Nombre</th>
                       <th>Apellido</th>
@@ -44,8 +43,7 @@ $data_list = $UserController->list_usuarios();
                             <?php foreach ($data_list as $row): ?>
                                 <tr>
                           <td><a href="<?php echo  ROOT_WEB.MODULE_NAME ?>/user/<?php echo $row['us_id'] ?>/">Edit</a></td>
-                          <td><a href="<?php echo  ROOT_WEB.MODULE_NAME ?>/user-del/<?php echo $row['us_id'] ?>/">Delete</a></td>
-                          
+                       
                             <td><?php echo $row['us_id'] ?></td>
                             <td><?php echo $row['us_name'] ?></td>                            
                             <td><?php echo $row['us_last_name'] ?></td>                            

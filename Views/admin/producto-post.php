@@ -50,6 +50,9 @@ if ( $re_val === 1 ) {
   
     }
     //si fue exitoso, redirect a list products
+
+    header('location: '. MODULE_PATH_WEB. 'list_producto/');
+
 }else {
     //flash
     $flash = new FLash();

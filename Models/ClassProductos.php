@@ -37,9 +37,10 @@ class ClassProductos
     public function pro_save()
     {
         $db =  new DB();
-        $this->pro_code= "CODE";
+        $this->pro_code= "CODE"; //campo aún sin uso
 
-        if ( empty($this->pro_id) ) {
+        if ( empty($this->pro_id) ) { /// si se manda el id es update else insert
+
 
         $sql = "INSERT INTO productos( pro_code, pro_name, pro_description, pro_precio_unidad, pro_precio_mayor, pro_cant_pro_precio_mayor, pro_stock_general, pro_stock_venta, pro_stock_almacen, pro_stock_temp) 
                 values( :pro_code, :pro_name, :pro_description, :pro_precio_unidad, :pro_precio_mayor, :pro_cant_pro_precio_mayor, :pro_stock_general, :pro_stock_venta, :pro_stock_almacen, :pro_stock_temp)";
@@ -60,6 +61,8 @@ class ClassProductos
         $re = $db->lastInsertId();
 
         }else {
+
+            ///update
         $sql = "UPDATE  productos  SET  pro_code = :pro_code, pro_name = :pro_name, pro_description = :pro_description, 
                 pro_precio_unidad = :pro_precio_unidad, pro_precio_mayor = :pro_precio_mayor, pro_cant_pro_precio_mayor = :pro_cant_pro_precio_mayor,
                 pro_stock_general = :pro_stock_general, pro_stock_venta = :pro_stock_venta,
@@ -79,17 +82,13 @@ class ClassProductos
                     );
   
         // echo '<pre>'; var_dump( 'Here' ); echo '</pre>'; die; /***VAR_DUMP_DIE***/
-        $re = $db->query($sql,$data); 
-        
+        $re = $db->query($sql,$data);         
 
-        $re = $db->lastInsertId(); 
-
-
-        
+        $re = $db->lastInsertId();         
         }
 
         $db->close();
-        return $re;
+        return $re; //siempre devolver el id para poder hacer procesos con el mismo
 
     }
 
@@ -118,12 +117,12 @@ class ClassProductos
 
     public function pro_delete_img()
     {
-
             $db =  new DB();
             $sql = "SELECT count(img_id) as cant_pro_id FROM producto_imgs where pro_id = :pro_id ";
             $data = array('pro_id' => $this->pro_id );
             $re = $db->row($sql,$data);
-            if ( $re['cant_pro_id'] > 2  ) {
+            // if ( $re['cant_pro_id'] > 2  ) {
+            if ( true ) { //solo será una imagen por producto - not page detail : (               
                 
                      $sql = "DELETE FROM producto_imgs where pro_id = :pro_id LIMIT 1";
                     $data = array('pro_id' => $this->pro_id );
@@ -198,9 +197,15 @@ class ClassProductos
     public function pro_delete()
     {
          $db =  new DB();
-        $sql = "UPDATE productos SET  pro_stock_general = '0', pro_stock_venta = '0',
-                pro_stock_almacen = '0', pro_stock_temp = '0' where pro_id = LAST_INSERT_ID(:pro_id) ; ";
-                $data = array('pro_id' => $this->pro_id );
+        // $sql = "UPDATE productos SET  pro_stock_general = '0', pro_stock_venta = '0',pro_stock_almacen = '0', pro_stock_temp = '0' where pro_id = LAST_INSERT_ID(:pro_id) ; ";
+         //delete imgs asociadas
+         $sql="DELETE FROM producto_imgs WHERE pro_id = :pro_id";
+         $data = array('pro_id' => $this->pro_id );
+         $re = $db->query($sql,$data);
+         
+         
+         $sql="DELETE FROM productos WHERE pro_id = :pro_id";
+         $data = array('pro_id' => $this->pro_id );
          $re = $db->query($sql,$data);
          $db->close();
             return $re;
@@ -263,5 +268,18 @@ class ClassProductos
         }
         $db->close();
         return $re;
+    }
+
+    public function pro_update_items_pro()
+    {
+        $db =  new DB();
+
+        $sql = "UPDATE productos SET pro_stock_temp = pro_stock_venta  WHERE pro_id = :pro_id";
+        $data = array('pro_id'=> $this->pro_id);
+        //   echo '<pre>'; var_dump( $data,$sql ); echo '</pre>'; die; /***VAR_DUMP_DIE***/         
+        $re = $db->query($sql,$data);
+        $db->close();
+        return $re;
+
     }
 }

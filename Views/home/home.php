@@ -27,6 +27,9 @@ if ( !isset($list_pro_all)  || empty($list_pro_all)) {
 				</div>
 			</div>
 	</div>
+	</div>
+	
+	
 		<h4>  &nbsp;&nbsp;&nbsp;Latest Products </h4>
 			  <ul class="thumbnails">
 				<?php //echo '<pre>'; var_dump( $list_pro_all ); echo '</pre>'; die; /***VAR_DUMP_DIE***/  ?>

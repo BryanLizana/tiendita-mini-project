@@ -1,9 +1,18 @@
 <?php 
-
+use Controllers\ProductoController;
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
     case 'clear_list_car':
+        $ProductoController =  new ProductoController();
+        if (isset($_SESSION['list_car']) && is_array($_SESSION['list_car'])) {
+              foreach ($_SESSION['list_car'] as $id => $detail) {
+                $ProductoController->pro_id = $id;
+                    $ProductoController->update_items_pro();
+                }
+        }
+
         unset($_SESSION['list_car']);
+
         break;
 
     default:
