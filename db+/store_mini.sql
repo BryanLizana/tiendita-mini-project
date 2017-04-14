@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-04-2017 a las 00:45:31
--- Versión del servidor: 10.1.10-MariaDB
--- Versión de PHP: 5.6.15
+-- Tiempo de generación: 14-04-2017 a las 03:11:00
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,16 +28,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `productos` (
   `pro_id` int(11) NOT NULL,
-  `pro_code` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pro_code` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pro_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pro_description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pro_description` longtext COLLATE utf8mb4_unicode_ci,
   `pro_precio_unidad` decimal(10,2) NOT NULL,
   `pro_precio_mayor` decimal(10,2) NOT NULL,
-  `pro_cant_pro_precio_mayor` int(10) NOT NULL,
-  `pro_stock_general` int(11) NOT NULL,
-  `pro_stock_venta` int(11) NOT NULL,
-  `pro_stock_almacen` int(11) NOT NULL,
-  `pro_stock_temp` int(11) NOT NULL
+  `pro_cant_pro_precio_mayor` int(10) DEFAULT NULL,
+  `pro_stock_general` int(11) DEFAULT NULL,
+  `pro_stock_venta` int(11) DEFAULT NULL,
+  `pro_stock_almacen` int(11) DEFAULT NULL,
+  `pro_stock_temp` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -45,10 +45,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`pro_id`, `pro_code`, `pro_name`, `pro_description`, `pro_precio_unidad`, `pro_precio_mayor`, `pro_cant_pro_precio_mayor`, `pro_stock_general`, `pro_stock_venta`, `pro_stock_almacen`, `pro_stock_temp`) VALUES
-(1, 'CODE', 'test', 'test', '12.00', '12.00', 12, 12, 0, 12, 0),
-(2, 'CODE', 'Manzanas', 'MAnzanas', '0.50', '0.30', 12, 120, 50, 70, 70),
-(3, 'CODE', 'Peras', 'Peras', '0.50', '0.30', 12, 0, 0, 0, 0),
-(4, 'CODE', 'Pera', 'Peras', '0.34', '0.29', 12, 120, 50, 70, 50);
+(7, 'CODE', 'Camara Simple', 'Camara Simple para tomar actividades con familia', '20.50', '20.00', 10, 20, 15, 3, 15),
+(8, 'CODE', 'manzana', 'Manzana Roja de la selva', '0.65', '0.45', 12, 120, 32, 85, 32),
+(9, 'CODE', 'Mouse', 'Mouse Gamer basic', '30.00', '30.00', 1, 10, 7, 2, 7),
+(10, 'CODE', 'Pera', 'Pera verde , traído del extranjero.', '0.50', '0.40', 12, 300, 196, 102, 196),
+(13, 'CODE', 'Botas para mujer', 'Botas para mujer color negro', '30.00', '30.00', 30, 30, 29, 0, 29),
+(14, 'CODE', 'Elmo tamaño real', 'Un Elmo tamaño real ( 1m )', '13.60', '13.60', 10, 10, 9, 0, 9),
+(15, 'CODE', 'mini Penguin ', 'Peluche mini Penguin  ', '4.90', '4.50', 12, 5, 3, 1, 3),
+(16, 'CODE', 'Buho Blanco', 'Buho Blanco que brilla en la oscuridad', '5.40', '3.70', 4, 17, 15, 0, 15);
 
 -- --------------------------------------------------------
 
@@ -67,12 +71,13 @@ CREATE TABLE `producto_imgs` (
 --
 
 INSERT INTO `producto_imgs` (`img_id`, `pro_id`, `pro_img_path`) VALUES
-(36, 1, 'Captura2.PNG1717-04-100748.png'),
-(37, 1, 'Captura2.PNG1717-04-100705.png'),
-(38, 1, 'Captura2.PNG1717-04-100715.png'),
-(40, 2, 'Captura2.PNG1717-04-100956.png'),
-(42, 3, 'tagmanager-best-practica.png1717-04-100956.png'),
-(43, 4, 'Captura.PNG1717-04-110626.png');
+(4, 8, 'manzana.jpg1717-04-120557.jpeg'),
+(5, 9, 'mouse.jpg1717-04-120527.jpeg'),
+(8, 13, 'b4.jpg1717-04-140144.jpeg'),
+(9, 14, 'elmo.jpg1717-04-140129.jpeg'),
+(10, 15, 'pinguin.jpg1717-04-140131.jpeg'),
+(11, 16, 'buho.jpg1717-04-140159.jpeg'),
+(13, 7, 'panasonic.jpg1717-04-140138.jpeg');
 
 -- --------------------------------------------------------
 
@@ -106,7 +111,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`us_id`, `us_name`, `us_last_name`, `us_dni`, `us_password`, `us_status`, `us_type`) VALUES
-(1, 'Bryan', 'Lizana', '74650330', 'admin', 1, 'ROOT');
+(1, 'Bryan', 'Lizana', '74650330', 'admin', 1, 'ROOT'),
+(2, 'Bryan Copy', 'Lizana Copy', '74650331', 'admincopy', 0, 'ADMIN'),
+(3, 'ADMIN', 'ADMIN', '123456789', '123456789', 1, 'ADMIN');
 
 -- --------------------------------------------------------
 
@@ -190,17 +197,17 @@ ALTER TABLE `venta_productos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `producto_imgs`
 --
 ALTER TABLE `producto_imgs`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Restricciones para tablas volcadas
 --
